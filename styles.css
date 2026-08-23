@@ -368,6 +368,11 @@ a {
   text-underline-offset: 3px;
 }
 
+.guide-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .guide-content code {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
   font-size: 0.94em;
