@@ -40,3 +40,11 @@ GitHub Pages에 올릴 ERKEYS 최소 랜딩페이지입니다.
 - 문의 메일: `hello@erkeys.com`
 
 구글폼과 사용 가이드는 아직 사용자가 직접 준비하는 전제이므로, 공개 전까지 placeholder를 유지합니다.
+
+## 문서/위키 구현 원칙
+
+- 독자적인 Markdown 렌더러, 라우터, 변환 스크립트는 만들지 않습니다.
+- 가장 먼저 GitHub Pages가 기본 지원하는 정적 HTML 또는 Jekyll/Markdown 방식을 검토합니다.
+- Notion은 초안 작성과 운영 문서 관리에는 사용할 수 있지만, 공개 사이트 반영은 공식 Export 기능으로 HTML 또는 Markdown을 가져오는 방식만 검토합니다.
+- 공개 URL은 가능하면 `erkeys.com/user-guide/`처럼 이 저장소의 폴더와 `index.html` 또는 GitHub Pages/Jekyll 표준 처리로 구성합니다.
+- 범용 도구로 해결되지 않는 반복 문제가 확인되기 전까지 새 프레임워크, 빌드 도구, 자동화, 커스텀 변환기는 추가하지 않습니다.
