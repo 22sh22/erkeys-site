@@ -1,0 +1,344 @@
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --text: #000000;
+  --muted: #555555;
+  --subtle: #777777;
+  --disabled: #999999;
+  --line: #eeeeee;
+  --key-line: #222222;
+  --key-muted-line: #dddddd;
+  --pressed: #d8d8d8;
+  --keyboard-width: 638px;
+  font-family: Pretendard, SUIT, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.page {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  padding: 72px 24px 64px;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 56px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.page-nav a {
+  color: var(--text);
+}
+
+.page-header {
+  width: min(100%, 560px);
+}
+
+.brand-label {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.92rem, 4vw, 2.7rem);
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.lead {
+  margin: 24px 0 0;
+  font-size: clamp(1.02rem, 2vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.description {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.input-status {
+  width: fit-content;
+  min-height: 28px;
+  margin: 22px 0 0;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--text);
+  color: var(--subtle);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.input-status.is-active {
+  color: var(--text);
+}
+
+.keymap-comparison {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.layer-panel {
+  min-width: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--text);
+}
+
+.layer-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.layer-index {
+  margin: 2px 0 0;
+  color: var(--disabled);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.layer-header h2 {
+  margin: 0;
+  font-size: 1.06rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.layer-header p:not(.layer-index) {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.keyboard-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0 14px;
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+  overscroll-behavior-inline: contain;
+}
+
+.keyboard-viewport:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+
+.keyboard {
+  position: relative;
+  width: var(--keyboard-width);
+  min-width: var(--keyboard-width);
+  height: 322px;
+}
+
+.hand-label {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  color: var(--subtle);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.hand-label.left {
+  left: 139px;
+}
+
+.hand-label.right {
+  left: 489px;
+}
+
+.key {
+  position: absolute;
+  width: 44px;
+  height: 42px;
+  padding: 2px;
+  border: 1px solid var(--key-line);
+  border-radius: 3px;
+  background: #ffffff;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: 0;
+  user-select: none;
+  touch-action: manipulation;
+  transition: background-color 70ms linear, border-color 70ms linear, transform 70ms linear;
+}
+
+.key:hover {
+  background: #f5f5f5;
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+  z-index: 3;
+}
+
+.key.is-inherited {
+  border-color: var(--key-muted-line);
+  color: var(--disabled);
+  background: #fafafa;
+}
+
+.key.is-optional {
+  border-color: var(--subtle);
+  border-style: dashed;
+  color: var(--subtle);
+  background: #f7f7f7;
+}
+
+.key.is-pressed,
+.key[aria-pressed="true"] {
+  border-color: var(--text);
+  background: var(--pressed);
+  color: var(--text);
+  transform: translateY(1px);
+}
+
+.notes {
+  width: min(100%, 560px);
+  margin-top: 42px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.notes p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notes p + p {
+  margin-top: 8px;
+}
+
+.sample-key {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--key-muted-line);
+  background: #fafafa;
+}
+
+.sample-key.optional {
+  border-color: var(--subtle);
+  border-style: dashed;
+  background: #f7f7f7;
+}
+
+.page-footer {
+  width: min(100%, 560px);
+  margin-top: 76px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--subtle);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .page {
+    width: min(100%, 720px);
+    padding: 56px 24px 64px;
+  }
+
+  .keymap-comparison {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 44px 20px 56px;
+  }
+
+  .page-nav {
+    margin-bottom: 44px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.52rem, 6.2vw, 1.95rem);
+  }
+
+  .keymap-comparison {
+    margin-top: 40px;
+  }
+
+  .keyboard-viewport::after {
+    content: "좌우로 스크롤";
+    position: sticky;
+    left: 0;
+    display: block;
+    width: max-content;
+    margin-top: 8px;
+    color: var(--disabled);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .page-footer {
+    margin-top: 76px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key {
+    transition: none;
+  }
+}
