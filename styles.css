@@ -35,12 +35,12 @@ a {
   padding: 72px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
 }
 
 .label {
-  margin: 0 0 16px;
+  margin: 0 0 56px;
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 600;
@@ -113,7 +113,7 @@ a {
 
 .site-footer {
   width: 100%;
-  margin-top: 92px;
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid #eeeeee;
 }
@@ -140,6 +140,10 @@ a {
     padding: 44px 20px;
   }
 
+  .label {
+    margin-bottom: 44px;
+  }
+
   .product-title {
     font-size: clamp(1.52rem, 6.2vw, 1.95rem);
   }
@@ -153,7 +157,7 @@ a {
   }
 
   .site-footer {
-    margin-top: 76px;
+    margin-top: auto;
   }
 }
 
