@@ -164,14 +164,14 @@ a {
 }
 
 .guide-page {
-  width: min(100%, 720px);
+  width: min(100%, 560px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 56px 24px 72px;
+  padding: 72px 24px;
 }
 
 .guide-header {
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 }
 
 .guide-nav {
@@ -179,7 +179,7 @@ a {
   align-items: center;
   gap: 14px;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 600;
 }
 
@@ -190,42 +190,46 @@ a {
 }
 
 .guide-content {
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 0.9rem;
+  line-height: 1.7;
   word-break: keep-all;
 }
 
 .guide-content h1 {
-  margin: 0 0 28px;
-  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 24px;
+  font-size: clamp(1.92rem, 4vw, 2.7rem);
+  font-weight: 650;
   line-height: 1.15;
+  letter-spacing: 0;
 }
 
 .guide-content h2 {
-  margin: 48px 0 16px;
-  font-size: 1.45rem;
-  line-height: 1.35;
+  margin: 36px 0 12px;
+  font-size: clamp(1.02rem, 2vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.45;
 }
 
 .guide-content h3 {
-  margin: 32px 0 12px;
-  font-size: 1.15rem;
+  margin: 28px 0 10px;
+  font-size: 0.98rem;
+  font-weight: 650;
   line-height: 1.45;
 }
 
 .guide-content p,
 .guide-content ul,
 .guide-content ol {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 
 .guide-content ul,
 .guide-content ol {
-  padding-left: 1.35rem;
+  padding-left: 1.25rem;
 }
 
 .guide-content li {
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
 .guide-content a {
@@ -240,19 +244,19 @@ a {
 }
 
 .guide-content blockquote {
-  margin: 24px 0;
-  padding: 0 0 0 18px;
+  margin: 22px 0;
+  padding: 0 0 0 16px;
   border-left: 2px solid var(--line);
   color: var(--muted);
 }
 
 .guide-footer {
-  margin-top: 80px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  color: #8a8a8a;
-  font-size: 0.84rem;
-  line-height: 1.65;
+  margin-top: 76px;
+  padding-top: 16px;
+  border-top: 1px solid #eeeeee;
+  color: #999999;
+  font-size: 0.78rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 640px) {
@@ -261,6 +265,10 @@ a {
   }
 
   .guide-header {
-    margin-bottom: 48px;
+    margin-bottom: 44px;
+  }
+
+  .guide-content h1 {
+    font-size: clamp(1.52rem, 6.2vw, 1.95rem);
   }
 }
