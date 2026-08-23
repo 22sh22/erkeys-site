@@ -131,17 +131,17 @@ h1 {
   width: min(100%, 720px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 40px 24px 72px;
+  padding: 56px 24px 72px;
 }
 
 .guide-header {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .guide-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   color: var(--muted);
   font-size: 0.95rem;
   font-weight: 600;
@@ -211,20 +211,20 @@ h1 {
 }
 
 .guide-footer {
-  margin-top: 72px;
-  padding-top: 24px;
+  margin-top: 80px;
+  padding-top: 22px;
   border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: #8a8a8a;
+  font-size: 0.84rem;
+  line-height: 1.65;
 }
 
 @media (max-width: 640px) {
   .guide-page {
-    padding: 32px 20px 56px;
+    padding: 44px 20px 56px;
   }
 
   .guide-header {
-    margin-bottom: 36px;
+    margin-bottom: 48px;
   }
 }
