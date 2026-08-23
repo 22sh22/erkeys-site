@@ -163,6 +163,136 @@ a {
   }
 }
 
+.contact-page {
+  width: min(100%, 560px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 72px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 64px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.contact-nav a {
+  color: var(--text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: clamp(1.92rem, 4vw, 2.7rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.contact-lead {
+  max-width: 520px;
+  margin: 24px 0 0;
+  font-size: clamp(1.02rem, 2vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.45;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.contact-status {
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px;
+  border: 1px solid #d82121;
+  background: #fff6f6;
+}
+
+.contact-status-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.contact-status-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.contact-status p {
+  margin: 0;
+  color: #333333;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.contact-status p + p {
+  margin-top: 4px;
+}
+
+.contact-list {
+  width: 100%;
+  margin-top: 34px;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-link {
+  min-height: 42px;
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.contact-link.primary {
+  background: var(--text);
+  color: var(--background);
+}
+
+.contact-link.disabled {
+  border-color: #dddddd;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .contact-page {
+    padding: 44px 20px;
+  }
+
+  .contact-nav {
+    margin-bottom: 48px;
+  }
+
+  .contact-title {
+    font-size: clamp(1.52rem, 6.2vw, 1.95rem);
+  }
+
+  .contact-link {
+    width: 100%;
+  }
+}
+
 .guide-page {
   width: min(100%, 560px);
   min-height: 100vh;
