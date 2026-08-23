@@ -102,7 +102,6 @@ const codeAliases = new Map([
 ]);
 
 const keyElements = [];
-const inputStatus = document.querySelector("#input-status");
 const activeCodes = new Set();
 const activeMouseButtons = new Set();
 
@@ -140,7 +139,6 @@ function createKey(item, layer) {
   const press = () => {
     button.classList.add("is-pressed");
     button.setAttribute("aria-pressed", "true");
-    setStatus(`${label} 선택`, true);
   };
   const release = () => {
     button.classList.remove("is-pressed");
@@ -170,11 +168,6 @@ function renderKeyboard(target, layer) {
   physicalKeys.forEach((item) => target.append(createKey(item, layer)));
 }
 
-function setStatus(message, active = false) {
-  inputStatus.textContent = message;
-  inputStatus.classList.toggle("is-active", active);
-}
-
 function normalizeCode(code) {
   return codeAliases.get(code) ?? code;
 }
@@ -184,42 +177,27 @@ function updateCodeState(code, pressed) {
   if (pressed) activeCodes.add(normalized);
   else activeCodes.delete(normalized);
 
-  let matches = 0;
   keyElements.forEach(({ button, codes }) => {
     if (!codes.length) return;
     const selected = codes.some((candidate) => normalizeCode(candidate) === normalized);
     if (selected) {
       button.classList.toggle("is-pressed", pressed);
       button.setAttribute("aria-pressed", pressed ? "true" : "false");
-      matches += 1;
     }
   });
 
-  if (pressed) {
-    setStatus(matches ? `${normalized} · ${matches}개 위치` : `${normalized} · 표시 위치 없음`, true);
-  } else if (!activeCodes.size && !activeMouseButtons.size) {
-    setStatus("입력 대기 중", false);
-  }
 }
 
 function updateMouseState(buttonNumber, pressed) {
   if (pressed) activeMouseButtons.add(buttonNumber);
   else activeMouseButtons.delete(buttonNumber);
 
-  let matches = 0;
   keyElements.forEach((entry) => {
     if (entry.layer !== "lower" || entry.mouseButton !== buttonNumber) return;
     entry.button.classList.toggle("is-pressed", pressed);
     entry.button.setAttribute("aria-pressed", pressed ? "true" : "false");
-    matches += 1;
   });
 
-  if (pressed) {
-    const names = ["좌클릭", "중클릭", "우클릭"];
-    setStatus(`${names[buttonNumber] ?? "마우스"} · ${matches}개 위치`, true);
-  } else if (!activeCodes.size && !activeMouseButtons.size) {
-    setStatus("입력 대기 중", false);
-  }
 }
 
 function resetInputState() {
@@ -229,7 +207,6 @@ function resetInputState() {
     button.classList.remove("is-pressed");
     button.setAttribute("aria-pressed", "false");
   });
-  setStatus("입력 대기 중", false);
 }
 
 renderKeyboard(document.querySelector("#default-keyboard"), "base");
