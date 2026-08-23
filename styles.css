@@ -126,3 +126,103 @@ h1 {
     width: 100%;
   }
 }
+
+.guide-page {
+  width: min(100%, 720px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.guide-header {
+  margin-bottom: 56px;
+}
+
+.home-link {
+  display: inline-flex;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.guide-content {
+  font-size: 1.04rem;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.guide-content h1 {
+  margin: 0 0 32px;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.guide-content h2 {
+  margin: 56px 0 18px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 1.65rem;
+  line-height: 1.35;
+}
+
+.guide-content h3 {
+  margin: 36px 0 14px;
+  font-size: 1.22rem;
+  line-height: 1.45;
+}
+
+.guide-content p,
+.guide-content ul,
+.guide-content ol {
+  margin: 0 0 20px;
+}
+
+.guide-content ul,
+.guide-content ol {
+  padding-left: 1.35rem;
+}
+
+.guide-content li {
+  margin: 8px 0;
+}
+
+.guide-content a {
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.guide-content code {
+  padding: 0.12em 0.32em;
+  border: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92em;
+}
+
+.guide-content blockquote {
+  margin: 28px 0;
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+}
+
+.guide-footer {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .guide-page {
+    padding: 36px 20px 56px;
+  }
+
+  .guide-header {
+    margin-bottom: 42px;
+  }
+}
