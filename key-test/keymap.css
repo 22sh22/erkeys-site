@@ -79,26 +79,10 @@ a {
   line-height: 1.15;
 }
 
-.lead {
-  margin: 24px 0 0;
-  font-size: clamp(1.02rem, 2vw, 1.16rem);
-  font-weight: 650;
-  line-height: 1.45;
-  word-break: keep-all;
-}
-
-.description {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  word-break: keep-all;
-}
-
 .input-status {
   width: fit-content;
   min-height: 28px;
-  margin: 22px 0 0;
+  margin: 24px 0 0;
   padding: 4px 0;
   border-bottom: 1px solid var(--text);
   color: var(--subtle);
@@ -154,18 +138,12 @@ a {
 }
 
 .keyboard-viewport {
+  position: relative;
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 2px 0 14px;
-  scrollbar-width: thin;
-  scrollbar-color: #bdbdbd transparent;
-  overscroll-behavior-inline: contain;
-}
-
-.keyboard-viewport:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 4px;
+  height: 324px;
+  overflow: hidden;
+  overflow: clip;
+  padding: 2px 0 0;
 }
 
 .keyboard {
@@ -173,6 +151,7 @@ a {
   width: var(--keyboard-width);
   min-width: var(--keyboard-width);
   height: 322px;
+  transform-origin: left top;
 }
 
 .hand-label {
@@ -318,18 +297,6 @@ a {
 
   .keymap-comparison {
     margin-top: 40px;
-  }
-
-  .keyboard-viewport::after {
-    content: "좌우로 스크롤";
-    position: sticky;
-    left: 0;
-    display: block;
-    width: max-content;
-    margin-top: 8px;
-    color: var(--disabled);
-    font-size: 0.72rem;
-    font-weight: 600;
   }
 
   .page-footer {

@@ -1,5 +1,7 @@
 const KEY_W = 44;
 const KEY_H = 42;
+const KEYBOARD_WIDTH = 638;
+const KEYBOARD_HEIGHT = 322;
 const STEP = 48;
 const LEFT_X = 0;
 const RIGHT_X = 350;
@@ -233,10 +235,43 @@ function resetInputState() {
 renderKeyboard(document.querySelector("#default-keyboard"), "base");
 renderKeyboard(document.querySelector("#lower-keyboard"), "lower");
 
+const keyboardViewports = [...document.querySelectorAll(".keyboard-viewport")];
+
+function fitKeyboards() {
+  keyboardViewports.forEach((viewport) => {
+    const keyboard = viewport.querySelector(".keyboard");
+    const scale = Math.min(1, viewport.clientWidth / KEYBOARD_WIDTH);
+    keyboard.style.transform = `scale(${scale})`;
+    viewport.style.height = `${KEYBOARD_HEIGHT * scale + 2}px`;
+  });
+}
+
+const resizeObserver = new ResizeObserver(fitKeyboards);
+keyboardViewports.forEach((viewport) => resizeObserver.observe(viewport));
+fitKeyboards();
+
+const knownCodes = new Set(
+  keyElements.flatMap(({ codes }) => codes.map((code) => normalizeCode(code))),
+);
+const scrollCodes = new Set([
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "Space",
+  "PageUp",
+  "PageDown",
+  "Home",
+  "End",
+]);
+
 window.addEventListener("keydown", (event) => {
+  const code = normalizeCode(event.code);
+  if (knownCodes.has(code) || scrollCodes.has(code)) event.preventDefault();
+  if (scrollCodes.has(code)) event.stopPropagation();
   if (event.repeat) return;
   updateCodeState(event.code, true);
-});
+}, { capture: true });
 
 window.addEventListener("keyup", (event) => updateCodeState(event.code, false));
 window.addEventListener("mousedown", (event) => {

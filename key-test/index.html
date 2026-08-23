@@ -26,11 +26,6 @@
       <header class="page-header">
         <p class="brand-label">erkeys 에르키스</p>
         <h1 id="page-title">MODU-C 키 테스트</h1>
-        <p class="lead">키를 누르면 브라우저가 받은 입력을 회색조로 표시합니다.</p>
-        <p class="description">
-          기본 키맵과 Lower 키맵을 함께 비교할 수 있습니다. 같은 입력 코드가 여러 위치에 있으면
-          해당 키가 함께 표시될 수 있습니다.
-        </p>
         <p class="input-status" id="input-status" role="status" aria-live="polite">
           입력 대기 중
         </p>
@@ -45,7 +40,7 @@
               <p>일반 입력 상태</p>
             </div>
           </header>
-          <div class="keyboard-viewport" tabindex="0" aria-label="기본 키맵. 좌우로 스크롤할 수 있습니다.">
+          <div class="keyboard-viewport" aria-label="기본 키맵">
             <div class="keyboard" id="default-keyboard" data-layer="default"></div>
           </div>
         </article>
@@ -58,7 +53,7 @@
               <p>보조 레이어 입력</p>
             </div>
           </header>
-          <div class="keyboard-viewport" tabindex="0" aria-label="Lower 키맵. 좌우로 스크롤할 수 있습니다.">
+          <div class="keyboard-viewport" aria-label="Lower 키맵">
             <div class="keyboard" id="lower-keyboard" data-layer="lower"></div>
           </div>
         </article>
