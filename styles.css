@@ -377,6 +377,31 @@ a {
   height: auto;
 }
 
+.guide-content table {
+  width: 100%;
+  max-width: 100%;
+  margin: 22px 0;
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.guide-content th,
+.guide-content td {
+  padding: 10px 12px;
+  border: 1px solid #dddddd;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.guide-content th {
+  background: #fafafa;
+  color: var(--text);
+  font-weight: 650;
+}
+
 .guide-content code {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
   font-size: 0.94em;
