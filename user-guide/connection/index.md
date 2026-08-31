@@ -8,7 +8,7 @@ description: MODU-C 연결 방식을 선택하는 안내입니다.
 
 사용하려는 연결 방식을 선택해 주세요.
 
-- [완전히 무선으로 연결하기](/user-guide/connection/wireless/)  
+- [무선으로 연결하기](/user-guide/connection/wireless/)  
   PC와 케이블로 연결하지 않고 양쪽 키보드를 무선으로 사용합니다.
 
 - [한쪽 유선으로 연결하기](/user-guide/connection/half-wired/)  
