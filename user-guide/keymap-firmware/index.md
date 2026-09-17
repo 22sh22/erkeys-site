@@ -58,3 +58,8 @@ layer1 + ctrl + R (순서대로)
 
 꼭 "잠금 해제 키" 에 접근할 방법을 살려 둔 채로 작업을 진행하세요.
 
+<img width="640" height="360" alt="image" src="https://github.com/user-attachments/assets/8b056612-a91d-482f-a27a-6a2eebc0b0d9" />
+
+<img width="640" height="360" alt="image" src="https://github.com/user-attachments/assets/d2fd27fa-16ee-46c2-84d3-0dbccca67176" />
+
+
