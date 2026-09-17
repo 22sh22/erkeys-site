@@ -13,8 +13,8 @@ description: MODU-C 리셋과 펌웨어 교체 방법을 안내합니다.
 
 ## 1. 부트로더 진입
 
-- 2026년 9월 14일 이후 배송 >> [단축키를 이용한 리셋 방법](/using-software)
-- 2026년 9월 14일 이전 배송 >> [물리 버튼을 이용한 리셋 방법](/using-button)
+- 2026년 9월 14일 이후 배송 >> [단축키를 이용한 리셋 방법](/user-guide/reset-firmware/using-software)
+- 2026년 9월 14일 이전 배송 >> [물리 버튼을 이용한 리셋 방법](/user-guide/reset-firmware/using-button)
 
 ## 2. 펌웨어 적용
 
