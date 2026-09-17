@@ -10,13 +10,16 @@ description: MODU-C 리셋과 펌웨어 교체 방법을 안내합니다.
 
 먼저 전원, USB 포트, 기존 블루투스 등록 삭제를 확인한 뒤 진행해 주세요.
 
+최신 펌웨어 다운로드 : [링크](https://github.com/22sh22/modu-c-zmk-config/releases/tag/firmware)
 
-## 1. 부트로더 진입
+## 방법
+
+### 1. 부트로더 진입
 
 - 2026년 9월 14일 이후 배송 >> [단축키를 이용한 리셋 방법](/user-guide/reset-firmware/using-software)
 - 2026년 9월 14일 이전 배송 >> [물리 버튼을 이용한 리셋 방법](/user-guide/reset-firmware/using-button)
 
-## 2. 펌웨어 적용
+### 2. 펌웨어 적용
 
 1. 안내받은 `.uf2` 파일을 `MODU_BOOT` 드라이브에 넣습니다.
 2. 파일 복사가 끝나면 제품이 자동으로 재부팅됩니다.
