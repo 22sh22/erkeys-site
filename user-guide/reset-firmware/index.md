@@ -6,7 +6,7 @@ description: MODU-C 리셋과 펌웨어 교체 방법을 안내합니다.
 
 # 리셋 및 펌웨어 교체
 
-단순 키 설정은 [이 페이지](user-guide/keymap-firmware/)를 참고해주세요
+단순 키 설정은 [이 페이지](/user-guide/keymap-firmware/)를 참고해주세요
 
 리셋이나 펌웨어 교체는 일반 연결 확인보다 실수 가능성이 높습니다.
 
